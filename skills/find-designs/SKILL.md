@@ -78,7 +78,7 @@ Pick 5 STYLISTICALLY DIVERSE candidates. For each show:
 
 Ask: "Which feel right? Which feel wrong?"
 
-If user picks one directly → skip Round 2.
+**DO NOT proceed to Phase 3 until the user responds.** If user picks one directly → skip Round 2.
 
 ### Round 2: Narrow Refinement (3 options)
 
