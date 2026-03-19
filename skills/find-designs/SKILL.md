@@ -90,23 +90,7 @@ If taste profile exists: skip Round 1, present 3 pre-filtered options or recomme
 
 ## Phase 3 — Save Taste Profile
 
-Save to `.commons/taste.json`:
-
-    {
-      "version": 1,
-      "updated_at": "<ISO>",
-      "preferences": {
-        "temperature": "warm | cool | neutral",
-        "density": "spacious | balanced | compact",
-        "radius": "sharp | moderate | rounded",
-        "font_tendency": "serif | sans | mono | mixed",
-        "personality": "minimal | professional | playful | bold | organic"
-      },
-      "liked_skills": [],
-      "disliked_skills": [],
-      "selected_skill": "<slug>",
-      "feedback_notes": []
-    }
+Copy `{baseDir}/assets/taste-profile.json` to `.commons/taste.json` and fill it with the user's preferences, liked/disliked skills, selected skill, and feedback notes from Phase 2.
 
 Also merge into `~/.commons/global-taste.json` if writable.
 
@@ -160,9 +144,16 @@ Summarize: skill applied, key decisions, files modified, link to `https://joinco
 
 ## API Reference
 
-    GET  /api/items              — list (?q=, ?sort=trending|new|most-applied, ?limit=)
-    GET  /api/items/{slug}       — detail + artifact URLs
-    POST /api/items/{slug}/apply — track install
+Load `references/api.md` for full endpoint details, response shapes, and query tips.
+
+## Gotchas
+
+- Multi-word search uses AND logic — "dark portfolio" requires BOTH words. Use single keywords for broader results, or run multiple searches.
+- `avoidFor` is CRITICAL — if a skill says "avoid: enterprise dashboards" and you're building one, SKIP IT. Don't rationalize.
+- NEVER load DESIGN.md or SKILL.md during Phase 0-2. They're 2000+ words each. Only load after the user picks.
+- `cardThumbnailUrl` is a full HTTPS URL to a PNG. Download it with the script. Show the image. Never just write the word "thumbnail".
+- Sort by `trending` for best quality. The registry has 200+ skills — many are low quality. Trending surfaces the curated ones.
+- If `taste.json` exists, skip the wide exploration round. Go straight to 3 refined options.
 
 ## Context Window Management
 
