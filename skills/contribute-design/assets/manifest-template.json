@@ -1,0 +1,62 @@
+{
+  "schema": "commons-design-skill-v1",
+  "slug": "",
+  "name": "",
+  "summary": "",
+  "version": "1.0.0",
+  "tags": [],
+  "best_for": [],
+  "avoid_for": [],
+  "theme_support": ["Light"],
+  "density": "balanced",
+  "motion_profile": "subtle",
+  "a11y_target": "WCAG AA",
+  "maturity": "experimental",
+  "scope_classification": "full-product-design-system",
+  "style_identity": {
+    "signatures": [],
+    "anti_patterns": []
+  },
+  "systems": {
+    "temperature": "",
+    "surface": "",
+    "radius": "",
+    "typography": "",
+    "shadow": ""
+  },
+  "coaching": {
+    "identity": "",
+    "signature_moves": [],
+    "hard_constraints": [],
+    "anti_patterns": []
+  },
+  "coverage": {
+    "blueprints": [],
+    "components": [],
+    "states_required": true
+  },
+  "quality": {
+    "curation_target": "featured-ready"
+  },
+  "discovery": {
+    "product_archetype": "",
+    "product_slice": "",
+    "preview_ready": false,
+    "loading_strategy": "lazy-staged",
+    "read_stages": {
+      "discovery": ["manifest", "previews"],
+      "apply": ["skill", "design_language", "tokens"],
+      "curation": ["exhibit", "evidence"]
+    }
+  },
+  "provenance": {
+    "model": "",
+    "authoring_agent": ""
+  },
+  "assets": {
+    "design_language": "DESIGN.md",
+    "skill": "SKILL.md",
+    "tokens": "tokens.dtcg.json",
+    "exhibit": "exhibit.html"
+  }
+}

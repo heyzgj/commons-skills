@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "updated_at": "",
+  "preferences": {
+    "temperature": "",
+    "density": "",
+    "radius": "",
+    "font_tendency": "",
+    "personality": ""
+  },
+  "liked_skills": [],
+  "disliked_skills": [],
+  "selected_skill": "",
+  "feedback_notes": []
+}
