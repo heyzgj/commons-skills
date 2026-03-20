@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "taste": {
+    "temperature": null,
+    "density": null,
+    "shape_language": null,
+    "typography_lean": null,
+    "personality": null
+  },
+  "metaphor": null,
+  "name": null,
+  "slug": null,
+  "signals": {
+    "css": [],
+    "fonts": [],
+    "colors": [],
+    "libraries": [],
+    "reactions": {
+      "positive": [],
+      "negative": [],
+      "language": []
+    }
+  },
+  "commons_url": null
+}

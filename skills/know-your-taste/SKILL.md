@@ -5,9 +5,16 @@ description: Discover the user's design taste and crystallize it into a shareabl
 
 # Know Your Taste
 
+**Pattern: Inversion + Pipeline + Generator**
+
 Discover who the user is aesthetically — not what they say they like, but what their actual choices reveal. Then crystallize that into a distinctive, shareable design skill on Commons that other agents can apply.
 
 The output is a published design skill at `joincommons.cc/style/{slug}` — a public statement of taste that the user can share. People share this because it says something real about them.
+
+**Bundled resources** (load only when referenced):
+- `references/bundle-spec.md` — Load during Phase 3 only, for file requirements and submission payload
+- `scripts/download_thumbnails.py` — Run during Phase 1 for visual confrontation
+- `assets/taste-profile.json` — Template for persisting taste signals to `.commons/taste.json`
 
 ## The Key Insight
 
@@ -48,7 +55,7 @@ Show, don't ask. Abstract questions get abstract answers.
 
 Download 6 thumbnails spanning maximum diversity:
 
-    bash {baseDir}/scripts/download-thumbnails.sh pencil-draft split-screen-noir felt-and-sticker daily-edition greenhouse-glass receipt-paper
+    python {baseDir}/scripts/download_thumbnails.py --slugs pencil-draft,split-screen-noir,felt-and-sticker,daily-edition,greenhouse-glass,receipt-paper
 
 Show all 6 images to the user. Then ask ONE question:
 
@@ -88,7 +95,7 @@ Then help them name it. The name should be:
 
 Now create all 5 files. Every design decision must trace back to a taste signal from Phase 0-2.
 
-Load templates from the `contribute-design` skill's `assets/` if available. Otherwise use `references/bundle-spec.md` for the requirements.
+**Load `references/bundle-spec.md` now** for file requirements and submission payload. Also load templates from the `contribute-design` skill's `assets/` if available.
 
 ### The Anti-Slop Checklist (run mentally on EVERY file you generate)
 
