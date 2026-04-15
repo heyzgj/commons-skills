@@ -1,85 +1,83 @@
-# Lumi Visual Prompt — Design Skill
+# Lumi Visual Prompt -- Design Skill
 
-## Design Context
+<design-system>
 
-**Target audience:** Developer tool makers, indie hackers shipping browser extensions, and SaaS founders building developer-facing products. Buyers are technical — they read code, they notice grid alignment, and they distrust anything that looks like a marketing template.
+## Product World
+- **Who**: Developers who use coding agents (Claude Code, Cursor, Codex, Gemini, Qwen, Trae). They live in terminals and IDEs, care about precision over polish, notice grid alignment, and distrust anything that smells like a marketing template. They read source code for fun and evaluate tools by their technical credibility, not their brand voice.
+- **What**: A Chrome extension that gives coding agents visual eyes -- click, tweak, and annotate any webpage, then export a structured context pack the agent can apply.
+- **Vibe**: Raycast meets an engineering notebook -- the precision of a schematic drawing rendered as a webpage. Every element looks like it was placed on a 40px grid with a ruler.
+- **Domain conventions**: UNDERSCORE_CASE for CTAs (TRY_LUMI, STAR_ON_GITHUB, NOTIFY_ME, COPY_PROMPT). "FIG. 01" labels on visual panels. Dimension annotations ("|< 800px >|"). "Preview_Mode" status labels. Feature sections numbered 01, 02, 03. Agent names rendered as uppercase grid cells.
 
-**Use cases:** Browser extension product page, developer tool landing page, CLI tool homepage, developer-facing SaaS marketing site, API documentation landing.
+## Core Principle
+The page itself is a technical artifact -- monospace everything, visible grid, hard shadows, zero ornamentation. The design proves the product's precision through its own construction.
 
-**Brand personality:** Technical but approachable. The voice sounds like a senior engineer who also cares about typography. Confident, concise, zero fluff. Every element could be a code comment — functional, intentional, earned.
+## Visual Vibe
+Mechanical, precise, engineered, paper-warm, grid-anchored, monospace-authority, brutalist-restrained, blueprint-functional, CLI-native, zero-fluff
 
----
+Real-world references: engineering graph paper, rubber-stamp offset printing, VS Code dark theme, terminal output, technical specification documents
 
-## Design Direction
+## What It's NOT
+- NOT a gradient-washed SaaS marketing page (no linear-gradient backgrounds, no aurora blobs)
+- NOT glassmorphism (no backdrop-blur cards, no frosted panels, no glow borders)
+- NOT soft or rounded (no border-radius above 2px, no soft drop shadows)
+- NOT multi-font (no pairing JetBrains Mono with Inter or a geometric sans)
+- NOT multi-accent (no purple or teal alongside the blue -- one chromatic color only)
+- NOT photography-dependent (no hero images, no stock photos of people coding)
+- NOT a typical features/pricing/testimonials SaaS template
 
-**Purpose:** A product page that demonstrates the product's precision through its own construction. The page itself IS the proof that this team sweats the details.
+## Section Archetypes
+- **Terminal mock**: Split-view dark panel showing live preview (left) with selection boxes and dimension annotations alongside generated context markdown (right). This IS the product demo.
+- **Agent compatibility strip**: Full-width black bar with bordered cells showing each supported agent name and icon. Flat, not cards.
+- **Numbered feature panel**: Massive watermark number (01, 02, 03) behind content side, with "FIG. XX" labeled visual panel on the other side. Panels show CSS-constructed product UI mocks (editor toolbar, annotation canvas, context export split-view).
+- **How-it-works flow**: Three numbered steps (CLICK, TWEAK, EXPORT) connected by arrow characters, black square number indicators.
+- **Dark CTA footer**: Black background with uppercase headline and hard-shadow email form.
 
-**Tone:** EXTREME technical minimalism. Think engineering notebook meets Swiss poster. Not "developer chic" — it IS a developer's artifact rendered as a webpage.
+## Hero Archetype
+Code-as-hero with typography. The hero is a massive uppercase monospace headline ("VISUAL CONTEXT FOR [agent ticker]") with a cycling agent name in blue and a blinking cursor. Below it, a dark terminal mock shows the product in action -- this IS the visual proof. No photos, no video, no illustrations. The typography and the terminal mock do all the work.
 
-**The ONE memorable thing:** The 40px engineering grid visible through the entire page background, combined with hard offset black shadows on every interactive element. The grid is the skeleton; the shadows are the depth. Together they create a feeling of precision-built machinery.
+## Asset Direction
+- **No photography**: All visual interest comes from CSS constructions -- terminal mocks, annotation overlays, property panels, code blocks
+- **Technical annotations as decoration**: "FIG. 01" labels, dimension rulers ("|< 800px >|"), "Preview_Mode" status indicators, selection boxes with element tags ("h1", "div.hero")
+- **Floating labels**: Small bordered badges ("CONTEXT READY", "VISUAL DIFF") with hard shadows, slight rotation, and float animation
+- **Agent ticker**: Vertical text rotation cycling through supported agent names, blue text with underline bar and blinking cursor
+- **What NOT to show**: No product screenshots, no browser chrome mockups with rendered pages, no abstract geometric illustrations, no mascots
 
-**What makes it unforgettable:** Monospace everything. JetBrains Mono at every scale — hero headlines, body copy, navigation, terminal blocks. Combined with cream background and zero rounded corners, it reads as a technical document that happens to be beautiful.
+## Typography
+**JetBrains Mono** -- the ONLY font, no exceptions. Monospace at display size (48-52px, weight 800) creates a mechanical rhythm that IS the design identity. At body size (15-17px) it reads as terminal output elevated to editorial quality. The tight tracking (-0.04em on headings) prevents the natural wide spacing of monospace from looking loose at large sizes.
 
-**References:**
-- Linear.app: developer tool precision, restrained palette
-- Raycast.com: terminal-native aesthetic, monospace authority
-- Warp.dev: developer tool with strong typographic identity
-- Vercel.com: clean grid, black/white authority with accent color
+Why JetBrains Mono: It signals "developer ecosystem" instantly. It has excellent legibility at both 10px annotation labels and 140px watermark numbers. The weight range (300-800) gives full hierarchy without needing a second font.
 
----
+## Color
+- **Cream #FBF9F1** -- page background, warm paper not clinical white. The warmth prevents the heavy black borders from feeling stark.
+- **Black #000** -- structural borders (2px), hard shadows, nav background, dark sections. The ONLY border color.
+- **Blue #3B82F6** -- the single accent. Hero ticker text, interactive highlights, annotation overlays, feature accents, selection boxes. Tailwind blue-500, signaling developer ecosystem.
+- **Gray scale** tinted warm: #f3f1e8, #e5e2d6, #d4d1c5, #a8a59a, #7a776e, #5c5a52, #3d3b35, #2a2822, #1a1814
+- **Status green #22C55E** -- terminal live dot, status indicators only. Not an accent color.
+- **Terminal palette** -- VS Code dark: #1e1e1e background, #c084fc purple headers, #fde047 yellow values, #4ade80 green values, #93c5fd blue properties
+
+## Bold Choices
+1. **40px grid background on body** -- visible linear-gradient grid lines create the engineering-notebook metaphor. Removing it makes the page feel empty instead of minimal.
+2. **Hard offset shadows with zero blur** -- 4/8/12/16px scale. The absence of blur references rubber-stamp printing and letterpress. Hover grows the shadow by +4px while translating the element -2px to simulate physical lift.
+3. **Floating decorative labels** -- small bordered badges ("CONTEXT READY", "VISUAL DIFF") with slight rotation and CSS float animation, positioned absolute near the terminal mock.
+4. **UNDERSCORE_CASE CTAs** -- "TRY_LUMI", "STAR_ON_GITHUB", "NOTIFY_ME" -- treating buttons as function calls, reinforcing the developer mental model.
+5. **"FIG. XX" panel labels** -- each feature visual is labeled like a figure in a technical document, with dimension annotations below.
+6. **Cycling agent name ticker** -- the hero headline includes a rotating agent name (Claude Code, Cursor, Codex, Gemini, Qwen) in blue with a blinking block cursor.
+7. **Terminal mock as hero visual** -- instead of a screenshot or video, the hero visual is a CSS-constructed split-view terminal showing the product's actual output (live preview + generated markdown).
+8. **All borders 2px solid black** -- every structural boundary uses the same 2px black border. This creates a unified "printed on paper" feeling where every element has equal weight.
 
 ## Workflow
-
-### Step 1 — Load Design Language
-Read `https://joincommons.cc/api/items/lumi-visual-prompt/raw/design-language` fully. Commit every token value, the grid overlay technique, shadow scale, and component rules before writing any markup.
-
-### Step 2 — Load Image Kit
-Read `https://joincommons.cc/api/items/lumi-visual-prompt/raw/image-kit`. This exhibit uses CSS + SVG only. No photography. All visual interest comes from the grid overlay, terminal mockups, annotation boxes, and diff views — all constructed in CSS.
-
-### Step 3 — Build
-Apply the design language exactly:
-- Set CSS custom properties from the token set (cream, blue, black, white, gray scale)
-- Apply the 40px grid background overlay on `body` using two `linear-gradient` rules at `rgba(0,0,0,0.06)`
-- Use `font-family: 'JetBrains Mono', monospace` on everything — no secondary font
-- Use `max-width: 1100px; margin: 0 auto` for all content containers
-- Apply `border: 2px solid var(--black)` on all component boundaries — no 1px borders
-- Apply hard offset `box-shadow` from the shadow scale (4px/8px/12px) — zero blur always
-- Use zero rounded corners everywhere — `border-radius: 0` except tiny `2px` on inputs if needed
-- Build the terminal preview with traffic-light dots, monospace code lines, and `#1E1E1E` background
-- Build feature visuals as CSS constructions: annotation boxes with blue highlight, diff views with green/red lines, export blocks with labeled sections
-- Use `fadeInUp` animation with staggered delays (0.1s increments) for above-fold elements
-- Use `letter-spacing: -0.03em` to `-0.04em` on all headings — tight tracking is mandatory
-- Use `font-weight: 800` for display headings, `700` for labels, `400` for body
-- Build the dark agents section with `background: var(--black)` and `1px solid rgba(255,255,255,0.1)` cell borders
-
-### Step 4 — Self-Critique
-Before finalising, read back your output and check:
-- Is JetBrains Mono the only font loaded and used? No Inter, no system-ui for visible text.
-- Are all shadows hard offset (zero blur)? Search for `blur` in box-shadow values.
-- Is the 40px grid visible on the page background?
-- Are all structural borders exactly `2px solid var(--black)`?
-- Are there any `border-radius` values greater than `2px`? Remove them.
-- Does the terminal block use the exact VS Code dark palette (`#1E1E1E` bg, `#22C55E` prompt, `#569CD6` flags, `#CE9178` strings)?
-- Are feature rows using `grid-template-columns: 1fr 1fr` with `64px` gap?
-- Is there any photography, gradient, or blurred shadow? Remove all of these.
-- Does the page use `--cream` (#FBF9F1) background, not white?
-
----
+1. Read `https://joincommons.cc/api/items/lumi-visual-prompt/raw/design-language` for the full visual system
+2. Read `references/asset-direction.md` for asset sourcing guidance
+3. Build following the product world and design system above
+4. Self-critique against `https://joincommons.cc/api/items/lumi-visual-prompt/raw/anti-patterns`
 
 ## Gotchas
+1. **JetBrains Mono at display size IS the aesthetic.** Swapping to Inter or Geist for headings because "monospace doesn't scale" destroys the identity. Use tight tracking (-0.04em) and weight 800 to compensate for monospace width.
+2. **Shadows must be zero blur.** `8px 8px 0px 0px #000` -- the `0px` blur is structural. Soft shadows make this look like a 2021 SaaS template.
+3. **The grid background is load-bearing.** The 40px grid transforms "minimal" from "empty" to "intentionally sparse." Never remove it; reduce opacity if needed.
+4. **Cream is not white.** `#FBF9F1` for body background. `#FFFFFF` is only for card surfaces and inputs. White body = lost warmth.
+5. **One accent color.** Blue `#3B82F6` only. Green exists for terminal status dots, not as a second accent.
+6. **Feature visuals are CSS constructions.** Terminal mocks, annotation canvases, property panels -- all built with borders and backgrounds. Never replace with screenshots or SVG illustrations.
+7. **No rounded corners.** `border-radius: 0` on everything structural. The only exception is `border-radius: 50%` on intentional circles (status dots).
 
-1. **JetBrains Mono for everything, no exceptions.** If you swap headings to Inter or a geometric sans because it "looks cleaner at large sizes," you destroy the technical identity. The monospace letterforms at 4rem+ ARE the aesthetic. Load weights 300-800.
-
-2. **Shadows are hard offset with zero blur.** `box-shadow: 8px 8px 0px 0px #000` — the `0px` blur is structural. Soft shadows (`0 8px 24px rgba(...)`) make this look like a generic SaaS template from 2021.
-
-3. **The grid background is load-bearing.** The 40px grid overlay (`linear-gradient` at `rgba(0,0,0,0.06)`) visible on the cream background is not decoration — it establishes the engineering-notebook metaphor. Removing it makes the page feel empty rather than minimal.
-
-4. **No rounded corners beyond 2px.** `border-radius: 0` on all cards, buttons, and containers. The only exception is `rounded-sm` (2px) if absolutely needed on small input fields. Anything above 4px breaks the technical register.
-
-5. **Feature visuals are CSS constructions, not illustrations.** The annotation overlay, diff view, and export blocks are built with borders, backgrounds, and monospace text. Do not replace them with SVG illustrations or screenshots — the code-constructed nature IS the point.
-
-6. **Cream background is not white.** `#FBF9F1` is warm cream. Pure `#FFFFFF` is used only for card surfaces and input backgrounds to create layering against the cream. If you set the body to white, you lose the paper-like warmth.
-
-7. **The blue accent (#3B82F6) is Tailwind blue-500.** This is deliberate — it signals "developer ecosystem" without explanation. Do not shift it warmer (violet) or cooler (cyan). One accent color, used for interactive highlights and the hero keyword.
-
-8. **Navigation is translucent cream with backdrop blur.** `rgba(251,249,241,0.85)` plus `backdrop-filter: blur(8px)`. If you make it solid, the grid pattern disappearing behind the nav creates a visible seam. The translucency lets the grid bleed through.
+</design-system>

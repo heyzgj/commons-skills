@@ -1,93 +1,85 @@
 ---
 name: immersive-depth-realestate
-description: Cinematic single-property luxury real estate experience where scrolling is walking through the space. True CSS perspective parallax for the hero, JS transform parallax for room sections, 60vh void hallways between rooms, scroll-driven reveals, Libre Baskerville / Lexend / JetBrains Mono type stack, warm OKLCH palette.
+description: Editorial luxury real estate platform with video walkthrough hero, warm cream OKLCH palette (hue 50-68), Cormorant Garamond weight-300 serif + Libre Franklin sans body. Property photography on every section, listing cards with real photos, asymmetric gallery, architectural spec tables. Like walking through a sunlit penthouse with a private broker -- the property IS the interface.
+metadata: design-skill
 ---
 
-# Immersive Depth Real Estate — Design Skill
+# Maison -- Luxury Real Estate
 
-## What This Skill Does
+<design-system>
 
-Builds a single-property luxury real estate listing page where scrolling through the page feels like walking through the physical space. Each room gets its own full-viewport section with a parallax photograph. Generous void sections between rooms act as hallways. The visitor arrives, tours the property, and reaches the CTA without ever feeling like they scrolled a listing.
+## Identity
 
-Best suited for: ultra-high-net-worth property listings, architectural showcases, luxury hospitality sites, and any product where the spatial experience is the value proposition.
+A curated luxury real estate platform that presents properties as editorial experiences, not listings. Warm cream palette rooted in natural materials -- linen, marble, walnut, brass. Cormorant Garamond at weight 300 for headlines that feel carved in stone, Libre Franklin at weight 300 for body text that disappears. Full-bleed video walkthrough hero because real estate is the most visual-dependent product category -- the property IS the first impression. Built for affluent buyers browsing $2M+ properties remotely, luxury agents curating private showings, and investors evaluating coastal California assets. They use Compass and Sotheby's International Realty. They care about discretion, provenance, and architectural pedigree. They hate urgency tactics, stock photography, and anything that feels like Zillow. Vibe: Sotheby's International Realty meets Cereal Magazine.
 
-## When to use
+## Core Design Language
 
-- Single luxury property showcases (residential, hospitality, architectural)
-- When the audience is affluent and unhurried — people who appreciate spatial design
-- When photography of the actual space or product is available and high quality
-- When the client wants to convey exclusivity, restraint, and architectural sophistication
-- When scroll depth and time-on-page are the success metrics (not fast task completion)
+- **Colors**: Warm cream OKLCH palette (hue 50-68). Background oklch(0.955 0.015 65), warm section oklch(0.940 0.020 60), dark CTA oklch(0.12 0.015 50). Text oklch(0.15 0.015 50) primary, oklch(0.30 0.012 50) body, oklch(0.55 0.008 58) captions. Gold accent oklch(0.58 0.10 70) for CTAs and eyebrows -- brass hardware, not gilded frames.
+- **Typography**: Cormorant Garamond 300/400/500 for display -- high-contrast serif signaling old-world taste. Libre Franklin 300/400/500 for body/UI -- clean neo-grotesque at weight 300 becomes invisible. Uppercase + wide tracking (0.12-0.25em) for all labels and navigation.
+- **Spacing**: Sections clamp(80px, 10vh, 140px) vertical, clamp(32px, 5vw, 80px) horizontal. Content max-width 1200px. Gallery/listings 1320px. Feature grid 1px gaps as separators.
+- **Radius**: Zero everywhere. Sharp architectural edges throughout -- like cut stone.
+- **Motion**: ease-out-quart (0.25,1,0.5,1) for all transitions. Hero staggered fadeUp 700-800ms. Reveal elements 600ms translateY(24px). Full reduced-motion support.
 
-## When not to use
+## Signature Moves
 
-- Multi-property listing sites or search results pages
-- Products where the user needs to compare options quickly (use a grid instead)
-- Any context where dense information delivery is required
-- Mobile-first products where scroll behavior is unpredictable
-- Sites that need dark/dramatic aesthetics — this style is always warm and light
+1. **Video walkthrough hero** -- full-bleed property video at 100vh with gradient overlay (heavier at bottom for text, transparent in middle where property shows). The property IS the first impression.
+2. **Asymmetric gallery** -- two images at different aspect ratios (3:4 + 4:3) in a 1.15fr/1fr grid. Never a uniform gallery grid.
+3. **Listing cards with real photography** -- 3-column property cards, each with unique photo at 16:10 aspect ratio, location badge, specs, and price. Every card has a visible property photograph.
+4. **1px rule separators** -- feature grid uses hairline rules as structural devices, not card containers. Background shows through 1px gaps.
+5. **Price as architectural element** -- asking price displayed in hero bottom-right corner with serif typography (2rem, weight 300), treated as part of the composition, not a UI badge.
+6. **Drop-cap on neighborhood editorial** -- serif initial cap (3.5rem) on the first paragraph signals editorial writing, not marketing copy.
+7. **Sticky sidebar on neighborhood** -- location name stays pinned while editorial text scrolls, creating a magazine-like reading experience.
+8. **Architectural quote break** -- photo background with translucent gradient overlay and serif italic pull quote between sections.
 
-## Default Workflow
+## Hard Constraints
 
-1. Read `https://joincommons.cc/api/items/immersive-depth-realestate/raw/design-language` for the full design language, parallax implementation patterns, and component specifications.
-2. Read `https://joincommons.cc/api/items/immersive-depth-realestate/raw/image-kit` — verify that all Unsplash URLs return 200 before using them. Substitute if any fail.
-3. Read `https://joincommons.cc/api/items/immersive-depth-realestate/raw/anti-patterns` — internalize the 8 topic-specific failure modes and the AI slop checklist.
-4. Build the exhibit following the design system in `https://joincommons.cc/api/items/immersive-depth-realestate/raw/design-language`.
-5. Self-critique using the 5-question protocol in `https://joincommons.cc/api/items/immersive-depth-realestate/raw/anti-patterns` before finalizing.
+1. Property photography is mandatory -- any page without 4+ visible property photos fails. Real estate without photography is a contradiction.
+2. Video must show the actual property -- walkthrough, drone approach, or exterior reveal. Never abstract b-roll or lifestyle footage.
+3. Zero border-radius -- rectangular everywhere. No rounded corners on any element.
+4. Warm light palette for main content -- dark sections reserved exclusively for CTA and footer.
+5. Gold accent stays scarce -- eyebrow labels, CTAs, and focus rings only. Never more than 10% of visual surface.
+6. Spec data must use real brands -- Gaggenau, Sub-Zero, Schuco, Waterworks, Crestron. Real measurements, real architect names.
+7. No urgency patterns -- no countdown timers, no scarcity messaging. The tone is "by appointment only."
+
+## Anti-Patterns
+
+1. **Zillow search interface** -- no map widgets, no filter bars, no "sort by price" dropdowns, no "hot homes" badges. This is editorial presentation, not a search engine.
+2. **Dark mode for main content** -- luxury real estate lives in warm sunlit tones. A dark-themed property listing feels like a nightclub, not a residence.
+3. **SaaS landing page structure** -- hero -> features grid -> metrics -> testimonials -> pricing -> CTA. This follows property visit flow: arrive -> understand -> see -> learn -> explore -> feel -> discover -> read -> act.
+4. **Marketing copy** -- "The ultimate dream home" is marketing. "A cantilevered walnut staircase connects three levels without touching the walls" is editorial. Describe what EXISTS.
+5. **Lifestyle photography** -- no people lounging by pools. Architecture is the subject. The buyer imagines themselves in the space.
+
+</design-system>
 
 ## Supporting Files
 
-- `https://joincommons.cc/api/items/immersive-depth-realestate/raw/design-language` — canonical design language, parallax implementation patterns, color system, typography scale, motion specifications, component anatomy
-- `tokens.dtcg.json` — all color, typography, spacing, and motion tokens in DTCG format
-- `https://joincommons.cc/api/items/immersive-depth-realestate/raw/design-language` — extended design system with exact CSS patterns and code references
-- `https://joincommons.cc/api/items/immersive-depth-realestate/raw/image-kit` — verified Unsplash image URLs, placement rules, substitution guidance
-- `https://joincommons.cc/api/items/immersive-depth-realestate/raw/anti-patterns` — 8 topic-specific failure modes, AI slop checklist, self-critique protocol
-- `exhibit.html` — the canonical proof surface; inspect for exact parallax implementation
-- `evidence/blueprints.json` — structural blueprints for parallax engine and void hallway anatomy (optional; not yet generated)
-- `evidence/component-matrix.json` — component coverage matrix for nav, room sections, stats, CTA (optional; not yet generated)
+- Read `https://joincommons.cc/api/items/immersive-depth-realestate/raw/design-language` for the full design system (typography scale, OKLCH color palette, spacing, motion, component patterns, layout grids)
+- Read `references/asset-direction.md` for photography direction, video walkthrough guidance, data-as-visual patterns, and verified starter assets
+- Read `https://joincommons.cc/api/items/immersive-depth-realestate/raw/anti-patterns` for domain-specific failure modes across visual, structural, content, and UX categories
+- Load `assets/tokens.dtcg.json` when generating code -- contains all OKLCH color tokens, semantic tokens (material colors, listing states), and typography composites
+- Inspect `assets/exhibit.html` as the reference implementation -- ~38KB, video hero + 7 photos + 10 sections
 
-## Output Expectations
+## Default Workflow
 
-A single self-contained HTML file that:
-- Opens to a full-viewport hero photograph with property name and price overlaid, animated in on load
-- Has a JS-based scroll parallax system where room section photographs move at 0.3x scroll speed
-- Has CSS perspective parallax on the hero (not the same JS system)
-- Has 60vh void sections between each room section — these are non-negotiable
-- Photographs scale subtly (1.0 → 1.05) as they approach the viewport center
-- All text and sections use IntersectionObserver scroll reveals at `opacity: 0 → 1`
-- Typography uses Libre Baskerville (display/italic), Lexend (body/UI), JetBrains Mono (data/meta)
-- Color palette is entirely warm OKLCH neutrals with photography providing saturation
-- Has a functioning scroll progress bar and nav that transitions from transparent to frosted
+1. Read `https://joincommons.cc/api/items/immersive-depth-realestate/raw/design-language` to internalize the warm cream palette, two-font system, zero-radius policy, and component patterns.
+2. Read `references/asset-direction.md` to understand photography subjects, video direction, and data-as-visual patterns for real estate.
+3. Load `assets/tokens.dtcg.json` for exact token values when writing CSS custom properties.
+4. Build: video hero with property -> intro -> gallery -> specs -> listing cards -> interior photo -> features -> quote break -> neighborhood -> inquiry -> footer.
+5. Self-critique against hard constraints and `https://joincommons.cc/api/items/immersive-depth-realestate/raw/anti-patterns` before shipping.
 
-## Reuse and Adaptation Guidance
+## When to Use
 
-This skill adapts well to:
-- **Luxury hospitality** (hotels, resorts) — replace room sections with suite, spa, restaurant, terrace. Same parallax structure, same void hallways.
-- **Architectural studio portfolios** — replace listing content with project narrative. Works well for single featured projects.
-- **High-end product showcases** — for products that have physical presence and emotional weight (watches, automobiles, yachts). Replace photos with product photography.
+- Luxury real estate property listing
+- High-end property portfolio website
+- Architectural showcase or virtual tour landing
+- Boutique real estate agency website
+- Editorial property magazine layout
+- Private estate sales platform
 
-For adaptation, always keep: the full-viewport room sections, the void hallways, the JS parallax at 0.3x, and the warm neutral palette. These are load-bearing aesthetics.
+## When Not to Use
 
-Adjust freely: the number of room sections, the copy voice, the specific typography within the warm-serif / clean-sans / mono stack convention, and the accent color (keep it in the gold-brass-copper register).
-
-## Non-negotiables
-
-- **JS transform parallax on room photos**: `translateY(distFromCenter * 0.3)` in a requestAnimationFrame scroll listener. Never `background-attachment: fixed`. Never CSS-only for room sections.
-- **CSS perspective parallax on the hero**: Scroll container with `perspective: 1px`, photo with `translateZ(-0.5px) scale(1.5)`. The hero uses a different parallax method than the rooms.
-- **60vh void sections** between every room — these are the hallways. Never reduce to less than 40vh. Never fill them with content.
-- **Full viewport height room sections** — 100vh exactly. The visitor cannot see the next section without scrolling.
-- **Warm light, always** — photo overlays use `--bg` at 25–40% opacity. Never dark overlays. Never darken the photography.
-- **Libre Baskerville italic** in every major heading — the italic `em` word is the typographic fingerprint of this style.
-- **JetBrains Mono for all data** — price, square footage, section numbers, coordinates. Never use display or body fonts for data.
-- **Scroll-driven IntersectionObserver reveals** on all non-hero content — nothing is pre-visible except the hero.
-
-## Common Failure Modes
-
-- **The Zillow grid**: Stats sidebar beside a photo carousel. Rebuild as a sequential walk-through, not a listing.
-- **background-attachment: fixed**: This is not parallax. It's broken on iOS and creates the wrong visual. Replace with JS rAF transform.
-- **Dark overlays on photography**: Warming the photo with the background color (`oklch(0.96 0.008 70 / 0.35)`) vs darkening it (`rgba(0,0,0,0.4)`) produces completely different spatial feelings. Always warm, never darken.
-- **Collapsed void sections**: If a reviewer says "there's too much empty space," the style is working correctly. The void is the hallway.
-- **Feature-list copy**: "This home features 6 bedrooms and panoramic views." Rewrite to describe what it FEELS LIKE to be in the space.
-- **Hero and room sections using the same parallax system**: The hero MUST use CSS perspective (separate scroll container). Rooms use JS rAF. Mixing them breaks the hero effect.
-- **Missing photo overflow**: Room photo wrappers must be `top: -30%; height: 160%` to have travel room. Without this, the photo edge becomes visible during scroll.
-- **Gold accent overuse**: The accent is for price, one gold rule per room, and CTA hover. Using it on dividers, headings, and decorative elements destroys its function as a material reference.
+- MLS/Zillow-style search-first property search
+- Affordable housing or rental listing platform
+- Commercial real estate with data tables and analytics
+- Property management dashboard
+- Real estate agent team page with headshots
